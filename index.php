@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Simple Template</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri();?>/custom.css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Simple Template</a>
+                <a class="navbar-brand" href="<?= get_site_url();?>">Simple Template</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
@@ -35,53 +35,25 @@
         <div class="row">
             <!-- Main content -->
             <div class="col-md-8 main-content">
+            <?php
+            while(have_posts()) {
+                the_post();
+                ?>
                 <article>
                     <img src="http://dummyimage.com/750x400/000/fff">
-                    <h1>Article title</h1>
+                    <h1><?= get_the_title();?></h1>
                     <div class="date">
-                        2015-5-12
+                        <?= get_the_date();?>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <?php the_excerpt();?>
                     </p>
+                    <a href="<?= get_permalink();?>">read more</a>
                 </article>
+                <?php
+            }
+            ?>
 
-                <article>
-                    <img src="http://dummyimage.com/750x400/000/fff">
-                    <h1>Article title</h1>
-                    <div class="date">
-                        2015-5-12
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </article>
-
-                <article>
-                    <img src="http://dummyimage.com/750x400/000/fff">
-                    <h1>Article title</h1>
-                    <div class="date">
-                        2015-5-12
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </article>
             </div>
             <!-- Sidebar -->
             <div class="col-md-4 sidebar">
