@@ -20,3 +20,8 @@ add_action('after_setup_theme', function() {
 add_filter('show_admin_bar', function () {
     return false;
 });
+
+// Add read more to excerpt
+add_filter('excerpt_more', function() {
+    return " [<a href=\"" . get_permalink() . "\">read more</a>]";
+});
