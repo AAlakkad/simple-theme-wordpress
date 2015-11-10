@@ -9,7 +9,11 @@
                 the_post();
                 ?>
                 <article>
-                    <img src="http://dummyimage.com/750x400/000/fff">
+                    <?php
+                    if ( has_post_thumbnail() ) {
+                        the_post_thumbnail('large');
+                    }
+                    ?>
                     <h1><?= get_the_title();?></h1>
                     <div class="date">
                         <?= get_the_date();?>
