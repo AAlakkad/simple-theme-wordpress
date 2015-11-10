@@ -15,3 +15,8 @@ add_theme_support( 'post-thumbnails' );
 add_action('after_setup_theme', function() {
     add_image_size ( 'our-size', 620, 320 );
 });
+
+// Hide admin bar in the front-end
+add_filter('show_admin_bar', function () {
+    return false;
+});
