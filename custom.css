@@ -56,3 +56,7 @@ article footer {
     color: #9d9d9d;
     margin-bottom: 10px;
 }
+
+.wp-post-image {
+    height: auto;
+}
