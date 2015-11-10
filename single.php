@@ -9,11 +9,7 @@
                 the_post();
                 ?>
                 <article>
-                    <?php
-                    if ( has_post_thumbnail() ) {
-                        the_post_thumbnail('large');
-                    }
-                    ?>
+                    <?php get_template_part('partials/post', 'thumbnail');?>
                     <h1><?= get_the_title();?></h1>
                     <div class="date">
                         <?= get_the_date();?>
