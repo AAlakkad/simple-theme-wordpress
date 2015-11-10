@@ -8,3 +8,7 @@ add_action( 'wp_enqueue_scripts', function() {
 } );
 
 add_theme_support( 'post-thumbnails' );
+
+add_action('after_setup_theme', function() {
+    add_image_size ( 'our-size', 620, 320 );
+});
