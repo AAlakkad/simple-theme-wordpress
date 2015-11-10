@@ -17,7 +17,6 @@
                     <p>
                         <?php the_excerpt();?>
                     </p>
-                    <a href="<?= get_permalink();?>">read more</a>
                 </article>
                 <?php
             }
