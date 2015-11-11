@@ -25,3 +25,5 @@ add_filter('show_admin_bar', function () {
 add_filter('excerpt_more', function() {
     return " [<a href=\"" . get_permalink() . "\">read more</a>]";
 });
+
+include_once 'inc/add_meta_box.php';
