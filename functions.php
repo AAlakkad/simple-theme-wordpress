@@ -29,3 +29,5 @@ add_filter('excerpt_more', function() {
 include_once 'inc/add_meta_box.php';
 
 include_once 'inc/add_custom_taxonomies.php';
+
+include_once 'inc/add_dashboard_page.php';
